@@ -43,7 +43,7 @@ body {
 }
 .table {
   height: 200px;
-  width: 320px;
+  width: 280px;
   border-top: 0.2px solid #6bb3e0;
 }
 
@@ -52,18 +52,25 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
-.first_input,
-.second_input,
-.third_input {
+.items__input {
   height: 40px;
   width: 40px;
+  font-family: "McLaren", cursive;
+  font-size: 18px;
 }
 
 h2 {
   font-family: "McLaren", cursive;
+  font-size: 12px;
+  margin: 0;
+}
+
+.footer__total--text {
+  font-family: "McLaren", cursive;
   font-size: 16px;
   margin: 0;
 }
+
 h3 {
   color: rgb(150, 148, 148);
   font-family: "Source Sans Pro", sans-serif;
@@ -78,14 +85,10 @@ h4 {
   margin: 0;
 }
 
-.main__articule-- {
-  &first--description--price,
-  &second--description--price,
-  &third--description--price {
-    color: #4dd163;
-    font-family: "McLaren", cursive;
-    font-size: 16px;
-  }
+.main__articule--description--price {
+  color: #4dd163;
+  font-family: "McLaren", cursive;
+  font-size: 16px;
 }
 
 .page__footer {
@@ -133,9 +136,16 @@ h4 {
   color: #ffffff;
   font-family: "McLaren", cursive;
   font-size: 14px;
-  padding: 5px;
+  padding: 10px;
   width: 250px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  & p {
+    margin: 0;
+    margin-left: 10px;
+    font-size: 16px;
+  }
 }
 
 .tdt {
