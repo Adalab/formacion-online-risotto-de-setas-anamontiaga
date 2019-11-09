@@ -1,6 +1,9 @@
 @import "core/variables";
 @import "core/links";
 
+body {
+  padding: 10px;
+}
 .header {
   &__subtitle {
     font-family: "Source Sans Pro", sans-serif;
@@ -11,16 +14,20 @@
   }
   &__title {
     font-family: "McLaren", cursive;
+    font-size: 22px;
     margin: 0px;
+    margin-top: -3px;
   }
   &__selectors {
     display: flex;
     flex-direction: row;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 12px;
+    margin-top: 20px;
   }
   &__select {
     margin-right: 4px;
+    margin-bottom: 4px;
     color: #6bb3e0;
     &--link {
       text-decoration: none;
@@ -28,6 +35,7 @@
   }
   &__deselect {
     color: #6bb3e0;
+    margin-bottom: 4px;
     &--link {
       text-decoration: none;
     }
@@ -80,21 +88,12 @@ h4 {
   }
 }
 
-.btn {
-  background-color: #4dd163;
-  color: #ffffff;
-  font-family: "McLaren", cursive;
-  font-size: 14px;
-  padding: 5px;
-  width: 200px;
-}
-
 .page__footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 320px;
+  margin-top: 40px;
 }
 
 .page__footer p,
@@ -103,13 +102,46 @@ h4 {
 }
 
 .footer__table {
-  border-top: none;
+  width: 320px;
+  height: 150px;
+}
+.footer {
+  width: 250px;
+}
+.footer__table td {
+  border: none;
+  padding: 0;
+  width: 200px;
+}
+.footer__table th {
+  width: 100px;
+  border: none;
 }
 
 .footer__table p {
   font-size: 14px;
 }
 
-.footer__table td {
-  width: 200px;
+.table__final--row p {
+  width: 50px;
+  margin-right: 0;
+  text-align: right;
+}
+
+.btn {
+  background-color: #4dd163;
+  color: #ffffff;
+  font-family: "McLaren", cursive;
+  font-size: 14px;
+  padding: 5px;
+  width: 250px;
+  margin-top: 20px;
+}
+
+.tdt {
+  width: 80px;
+}
+
+.row--height {
+  height: 10px;
 }
