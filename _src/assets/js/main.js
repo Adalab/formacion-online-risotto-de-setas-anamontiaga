@@ -8,6 +8,7 @@ const quantities = document.querySelectorAll(".main__article--description--weigh
 const prices = document.querySelectorAll(".main__articule--description--price");
 const itemsInput = document.querySelectorAll(".items__input");
 const subtotal = document.querySelector(".footer__subtotal--number");
+let totalItems = document.querySelector(".footer__items--number");
 
 const getRecipe = () => {
   fetch("https://raw.githubusercontent.com/Adalab/recipes-data/master/rissoto-setas.json")
@@ -25,8 +26,9 @@ const getRecipe = () => {
           articles[i].innerHTML = ingredients[i].product;
         }
         for (let i = 0; i < brands.length; i = i + 1) {
-          brands[i].innerHTML = ingredients[i].brand;
+          ingredients[i].brand ? (brands[i].innerHTML = ingredients[i].brand) : (brands[i].innerHTML = "");
         }
+
         for (let i = 0; i < quantities.length; i = i + 1) {
           quantities[i].innerHTML = ingredients[i].quantity;
         }
@@ -45,15 +47,30 @@ getRecipe();
 
 //MULTIPLICAR CANTIDADES POR PRECIOS
 const itemsPrice = () => {
-  for (let i = 0; i < itemsInput.length; i = i + 1) {
-    console.log(itemsInput[1].value);
-    // console.log(parseFloat(prices[i].innerHTML));
+  for (let i = 0; i < itemsInput.length; i = i + 1) {}
+};
+
+// SUMAR ITEMS
+
+let sum = 0;
+let itemsArray = [];
+const listenInput = () => {
+  for (let i = 0; i < itemsInput.length; i++) {
+    console.log(itemsInput[i].value);
+    itemsArray.push(itemsInput[i].value);
   }
 };
 
-for (const itemInput of itemsInput) {
-  itemInput.addEventListener("keydown", itemsPrice);
-}
+listenInput();
+
+console.log(itemsArray);
+// sum += parseInt(itemsInput[i].value);
+
+//   totalItems.innerHTML = sum;
+
+// for (const itemInput of itemsInput) {
+//   itemInput.addEventListener("keyup", listenInput);
+// }
 
 // SUMAR TODOS LOS PRECIOS
 const subtotalCount = () => {
