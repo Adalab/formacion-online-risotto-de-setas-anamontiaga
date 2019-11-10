@@ -4,6 +4,13 @@
 body {
   padding: 10px;
 }
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   &__subtitle {
     font-family: "Source Sans Pro", sans-serif;
@@ -41,6 +48,7 @@ body {
     }
   }
 }
+
 .table {
   height: 200px;
   width: 280px;
@@ -57,6 +65,7 @@ td {
   width: 40px;
   font-family: "McLaren", cursive;
   font-size: 18px;
+  padding: 5px;
 }
 
 h2 {
@@ -85,18 +94,25 @@ h4 {
   margin: 0;
 }
 
-.main__articule--description--price {
+.main__articule--description--price,
+.main__article--currency {
   color: #4dd163;
   font-family: "McLaren", cursive;
   font-size: 16px;
 }
-
+.main__articule--price--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.page__main {
+  margin-bottom: 40px;
+}
 .page__footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
 }
 
 .page__footer p,
@@ -104,31 +120,41 @@ h4 {
   font-family: "McLaren", cursive;
 }
 
-.footer__table {
+.page__footer {
   width: 320px;
   height: 150px;
+  margin-top: 0;
 }
 .footer {
-  width: 250px;
-}
-.footer__table td {
-  border: none;
-  padding: 0;
-  width: 200px;
-}
-.footer__table th {
-  width: 100px;
-  border: none;
-}
-
-.footer__table p {
-  font-size: 14px;
-}
-
-.table__final--row p {
-  width: 50px;
-  margin-right: 0;
-  text-align: right;
+  &__items {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  &__subtotal,
+  &__shippingcosts,
+  &__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  &__subtotal--text {
+    text-align: left;
+  }
+  &__items--number,
+  &__subtotal--number,
+  &__shippingcosts--number,
+  &__total--number {
+    margin: 0;
+  }
+  &__items--number {
+    margin-left: 10px;
+  }
 }
 
 .btn {
@@ -138,7 +164,6 @@ h4 {
   font-size: 14px;
   padding: 10px;
   width: 250px;
-  margin-top: 20px;
   display: flex;
   flex-direction: row;
   & p {
@@ -148,10 +173,9 @@ h4 {
   }
 }
 
-.tdt {
-  width: 80px;
-}
-
-.row--height {
-  height: 10px;
+.footer__subtotal--number--div,
+.footer__shippingcosts--number--div,
+.footer__total--number--div {
+  display: flex;
+  flex-direction: row;
 }

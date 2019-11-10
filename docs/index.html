@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Recetario</title>
+        <title>Recipe Book</title>
         <link rel="icon" href="./favicon.png" />
         <link rel="stylesheet" href="./assets/css/main.css" />
         <link href="https://fonts.googleapis.com/css?family=McLaren|Raleway|Source+Sans+Pro:200,200i,300,400&display=swap"
@@ -50,7 +50,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -58,7 +61,8 @@
                                 <input type="checkbox" id="cbox2" value="second_checkbox" />
                             </th>
                             <td>
-                                <input class="items__input" type="text" id="name" name="name" />
+                                <input class="items__input" value="text" type="text" id="name" name="name"
+                                />
                             </td>
                             <td>
                                 <div class="main__article--second--description">
@@ -71,7 +75,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -79,7 +86,8 @@
                                 <input type="checkbox" id="cbox3" value="third_checkbox" />
                             </th>
                             <td>
-                                <input class="items__input" type="text" id="name" name="name" />
+                                <input class="items__input" value="text" type="text" id="name" name="name"
+                                />
                             </td>
                             <td>
                                 <div class="main__article--third--description">
@@ -92,7 +100,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -100,7 +111,8 @@
                                 <input type="checkbox" id="cbox1" value="first_checkbox" />
                             </th>
                             <td>
-                                <input class="items__input" type="text" id="name" name="name" />
+                                <input class="items__input" value="text" type="text" id="name" name="name"
+                                />
                             </td>
                             <td>
                                 <div class="main__articule--first--description">
@@ -113,7 +125,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -134,7 +149,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -155,7 +173,10 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -176,67 +197,46 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="main__articule--description--price"></div>
+                                <div class="main__articule--price--container">
+                                    <div class="main__articule--description--price"></div> <span class="main__article--currency"></span>
+
+                                </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </main>
             <footer class="page__footer">
-                <table class="footer__table">
-                    <tbody>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>
-                                 <h3 class="footer__items--text">Items:</h3>
+                <div class="footer__items">
+                     <h3 class="footer__items--text">Items:</h3>
 
-                            </td>
-                            <td></td>
-                            <td class="table__final--row">
-                                <p class="footer__items--number">1</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>
-                                 <h3 class="footer__subtotal--text">Subtotal</h3>
+                    <p class="footer__items--number">1</p>
+                </div>
+                <div class="footer__subtotal">
+                     <h3 class="footer__subtotal--text">Subtotal</h3>
 
-                            </td>
-                            <td></td>
-                            <td class="table__final--row">
-                                <p class="footer__subtotal--number">2,95 <span class="footer__subtotal--number--span"></span>
+                    <div class="footer__subtotal--number--div">
+                        <p class="footer__subtotal--number">0</p> <span class="footer__subtotal--number--span"></span>
 
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>
-                                 <h3 class="footer__shippingcosts--text">Gastos de envío</h3>
+                    </div>
+                </div>
+                <div class="footer__shippingcosts">
+                     <h3 class="footer__shippingcosts--text">Gastos de envío</h3>
 
-                            </td>
-                            <td></td>
-                            <td class="table__final--row">
-                                <p class="footer__shippingcosts--number">7,00 <span class="footer__subtotal--shippingcosts--span"></span>
+                    <div class="footer__shippingcosts--number--div">
+                        <p class="footer__shippingcosts--number">7,00</p> <span class="footer__subtotal--shippingcosts--span"></span>
 
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>
-                                 <h4 class="footer__total--text">Total</h4>
+                    </div>
+                </div>
+                <div class="footer__total">
+                     <h4 class="footer__total--text">Total</h4>
 
-                            </td>
-                            <td></td>
-                            <td>
-                                <p class="footer__total--number">9,95 <span class="footer__total--number--span"></span>
+                    <div class="footer__total--number--div">
+                        <p class="footer__total--number">9,95 <span class="footer__total--number--span"></span>
 
-                                </p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                        </p>
+                    </div>
+                </div>
                 <button type="button" class="btn">Comprar ingredientes:
                     <p class="footer__btn--span">9,95 €</p>
                 </button>

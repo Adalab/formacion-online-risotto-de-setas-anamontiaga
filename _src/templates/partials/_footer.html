@@ -1,38 +1,31 @@
 <footer class="page__footer">
-  <table class="footer__table">
-    <tbody>
-      <tr>
-        <th scope="row"></th>
-        <td><h3 class="footer__items--text">Items:</h3></td>
-        <td></td>
-        <td class="table__final--row"><p class="footer__items--number">1</p></td>
-      </tr>
-      <tr>
-        <th scope="row"></th>
-        <td><h3 class="footer__subtotal--text">Subtotal</h3></td>
-        <td></td>
-        <td class="table__final--row">
-          <p class="footer__subtotal--number">2,95 <span class="footer__subtotal--number--span"></span></p>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row"></th>
-        <td><h3 class="footer__shippingcosts--text">Gastos de envío</h3></td>
-        <td></td>
-        <td class="table__final--row">
-          <p class="footer__shippingcosts--number">7,00 <span class="footer__subtotal--shippingcosts--span"></span></p>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row"></th>
-        <td><h4 class="footer__total--text">Total</h4></td>
-        <td></td>
-        <td>
-          <p class="footer__total--number">9,95 <span class="footer__total--number--span"></span></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="footer__items">
+    <h3 class="footer__items--text">Items:</h3>
+    <p class="footer__items--number">1</p>
+  </div>
+
+  <div class="footer__subtotal">
+    <h3 class="footer__subtotal--text">Subtotal</h3>
+    <div class="footer__subtotal--number--div">
+      <p class="footer__subtotal--number">0</p>
+      <span class="footer__subtotal--number--span"></span>
+    </div>
+  </div>
+
+  <div class="footer__shippingcosts">
+    <h3 class="footer__shippingcosts--text">Gastos de envío</h3>
+    <div class="footer__shippingcosts--number--div">
+      <p class="footer__shippingcosts--number">7,00</p>
+      <span class="footer__subtotal--shippingcosts--span"></span>
+    </div>
+  </div>
+
+  <div class="footer__total">
+    <h4 class="footer__total--text">Total</h4>
+    <div class="footer__total--number--div">
+      <p class="footer__total--number">9,95 <span class="footer__total--number--span"></span></p>
+    </div>
+  </div>
 
   <button type="button" class="btn">
     Comprar ingredientes:
