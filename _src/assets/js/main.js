@@ -132,11 +132,34 @@ const itemsPrice = () => {
     ac += parseInt(itemsInput[i].value);
   }
   totalItems.innerHTML = ac;
+  console.log(ac);
 };
+
+itemsPrice();
 
 for (const itemInput of itemsInput) {
   itemInput.addEventListener("change", itemsPrice);
 }
+
+// MULTIPLICAR NRO. DE ITEMS POR PRECIO
+// peta cuando escribes varios números en la misma sesión y en el mismo input.
+// optimizar el código.
+
+// const multipleItemsPrice = event => {
+//   const currentInput = event.currentTarget;
+
+//   prices[0].innerHTML = parseInt(itemsInput[0].value) * parseFloat(prices[0].innerHTML);
+//   prices[1].innerHTML = parseInt(itemsInput[1].value) * parseFloat(prices[1].innerHTML);
+//   prices[2].innerHTML = parseInt(itemsInput[2].value) * parseFloat(prices[2].innerHTML);
+//   prices[3].innerHTML = parseInt(itemsInput[3].value) * parseFloat(prices[3].innerHTML);
+//   prices[4].innerHTML = parseInt(itemsInput[4].value) * parseFloat(prices[4].innerHTML);
+//   prices[5].innerHTML = parseInt(itemsInput[5].value) * parseFloat(prices[5].innerHTML);
+//   prices[6].innerHTML = parseInt(itemsInput[6].value) * parseFloat(prices[6].innerHTML);
+// };
+
+// for (const itemInput of itemsInput) {
+//   itemInput.addEventListener("change", multipleItemsPrice);
+// }
 
 // SUMAR TODOS LOS PRECIOS
 const subtotalCount = () => {
@@ -145,7 +168,6 @@ const subtotalCount = () => {
   for (let i = 0; i < prices.length; i = i + 1) {
     parsePrices.push(parseFloat(prices[i]));
   }
-  //   parseInt(subtotal.innerHTML) = parseInt(subtotal.innerHTML)  +
 };
 
 subtotalCount();
