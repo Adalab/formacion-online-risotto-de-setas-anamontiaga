@@ -1,4 +1,7 @@
 "use strict";
+import data from "../../data/data";
+
+console.log(ingredients);
 
 const title = document.querySelector(".header__title");
 const articles = document.querySelectorAll(".main__article--description--title");
@@ -11,7 +14,7 @@ const subtotal = document.querySelector(".footer__subtotal--number");
 let totalItems = document.querySelector(".footer__items--number");
 
 const getRecipe = () => {
-  fetch("../../api.json")
+  fetch(data)
     .then(response => response.json())
     .then(data => {
       const recipe = data.recipe;
