@@ -1,7 +1,7 @@
 "use strict";
-import data from "../../data/data";
+import data from "./data/data.js";
 
-console.log(ingredients);
+console.log(data);
 
 const title = document.querySelector(".header__title");
 const articles = document.querySelectorAll(".main__article--description--title");
