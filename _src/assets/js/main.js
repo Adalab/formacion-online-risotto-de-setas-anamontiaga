@@ -133,6 +133,8 @@ for (let i = 0; i < itemsInput.length; i = i + 1) {
   inputArray.push(parseInt(itemsInput[i].value));
 }
 
+console.log(inputArray);
+
 let ac = 0;
 const itemsPrice = () => {
   let result = inputArray.reduce((acc, number) => acc + number, 0);
