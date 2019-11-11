@@ -126,16 +126,18 @@ const sumTotal = () => {
 sumTotal();
 
 // SUMAR ITEMS
+
+let inputArray = [];
+
+for (let i = 0; i < itemsInput.length; i = i + 1) {
+  inputArray.push(parseInt(itemsInput[i].value));
+}
+
 let ac = 0;
 const itemsPrice = () => {
-  for (let i = 0; i < itemsInput.length; i = i + 1) {
-    ac += parseInt(itemsInput[i].value);
-  }
-  totalItems.innerHTML = ac;
-  console.log(ac);
+  let result = inputArray.reduce((acc, number) => acc + number, 0);
+  totalItems.innerHTML = result;
 };
-
-itemsPrice();
 
 for (const itemInput of itemsInput) {
   itemInput.addEventListener("change", itemsPrice);
