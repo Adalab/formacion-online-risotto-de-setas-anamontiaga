@@ -55,8 +55,6 @@ const data = {
   }
 };
 
-// DOM
-
 const title = document.querySelector(".header__title");
 const articles = document.querySelectorAll(".main__article--description--title");
 const currency = document.getElementsByTagName("span");
@@ -65,10 +63,14 @@ const quantities = document.querySelectorAll(".main__article--description--weigh
 const prices = document.querySelectorAll(".main__articule--description--price");
 const itemsInput = document.querySelectorAll(".items__input");
 const subtotal = document.querySelector(".footer__subtotal--number");
-const total = document.querySelector(".footer__total--number");
+const $total = document.querySelector(".footer__total--number");
 const shippingCosts = document.querySelector(".footer__shippingcosts--number");
 const totalBtn = document.querySelector(".footer__btn--span");
 let totalItems = document.querySelector(".footer__items--number");
+
+let $selectAll = document.querySelector(".header__select--link");
+let $deselectAll = document.querySelector(".header__deselect--link");
+
 
 const getRecipe = () => {
   // fetch(data)
@@ -100,78 +102,69 @@ const getRecipe = () => {
     }
   }
 };
-// LOADER
 
 getRecipe();
 
-// SUBTOTAL
-
-const sumSubtotal = () => {
-  let acumulator = 0;
-  for (let i = 0; i < prices.length; i = i + 1) {
-    acumulator += parseFloat(prices[i].innerHTML);
-  }
-  subtotal.innerHTML = acumulator;
-};
-
-sumSubtotal();
-
-// TOTAL
-
-const sumTotal = () => {
-  total.innerHTML = parseFloat(subtotal.innerHTML) + parseFloat(shippingCosts.innerHTML);
-  totalBtn.innerHTML = parseFloat(total.innerHTML);
-};
-
-sumTotal();
-
-// SUMAR ITEMS
-
-let inputArray = [];
-
-for (let i = 0; i < itemsInput.length; i = i + 1) {
-  inputArray.push(parseInt(itemsInput[i].value));
+function updateSelectorValues(newValue){
+  document.querySelectorAll(".my_row input[type=checkbox]").forEach((el)=> el.checked = newValue);
 }
 
-console.log(inputArray);
-
-let ac = 0;
-const itemsPrice = () => {
-  let result = inputArray.reduce((acc, number) => acc + number, 0);
-  totalItems.innerHTML = result;
-};
-
-for (const itemInput of itemsInput) {
-  itemInput.addEventListener("change", itemsPrice);
+function selectAll(){
+  updateSelectorValues(true);
 }
 
-// MULTIPLICAR NRO. DE ITEMS POR PRECIO
-// peta cuando escribes varios números en la misma sesión y en el mismo input.
-// optimizar el código.
+function deSelectAll(){
+  updateSelectorValues(false);
+}
 
-// const multipleItemsPrice = event => {
-//   const currentInput = event.currentTarget;
+function updateValues() {
+  let subTotal = 0;
+  document.querySelectorAll(".my_row").forEach((row) => {
+    const $checked = row.querySelector("input[type=checkbox]");
+    const $quantity = row.querySelector(".items__input");
+    const $price = row.querySelector(".main__articule--description--price");
 
-//   prices[0].innerHTML = parseInt(itemsInput[0].value) * parseFloat(prices[0].innerHTML);
-//   prices[1].innerHTML = parseInt(itemsInput[1].value) * parseFloat(prices[1].innerHTML);
-//   prices[2].innerHTML = parseInt(itemsInput[2].value) * parseFloat(prices[2].innerHTML);
-//   prices[3].innerHTML = parseInt(itemsInput[3].value) * parseFloat(prices[3].innerHTML);
-//   prices[4].innerHTML = parseInt(itemsInput[4].value) * parseFloat(prices[4].innerHTML);
-//   prices[5].innerHTML = parseInt(itemsInput[5].value) * parseFloat(prices[5].innerHTML);
-//   prices[6].innerHTML = parseInt(itemsInput[6].value) * parseFloat(prices[6].innerHTML);
-// };
+    if (parseInt($quantity.value) > 0) {
+      if ($checked.checked) {
+        let price = parseFloat($price.innerHTML);
+        let quantity = parseInt($quantity.value);
+        let rowValue = price * quantity;
+        subTotal += rowValue;
+      }
+    }
+  })
 
-// for (const itemInput of itemsInput) {
-//   itemInput.addEventListener("change", multipleItemsPrice);
-// }
+  const shippingCost = parseFloat(shippingCosts.innerHTML);
+  const total = (shippingCost + subTotal).toFixed(2);
 
-// SUMAR TODOS LOS PRECIOS
-const subtotalCount = () => {
-  let parsePrices = [];
+  subtotal.innerHTML = subTotal.toFixed(2);
 
-  for (let i = 0; i < prices.length; i = i + 1) {
-    parsePrices.push(parseFloat(prices[i]));
+  if(subTotal > 0){
+    totalBtn.innerHTML = subTotal.toFixed(2);
+    $total.innerHTML = total;
+  }else{
+    totalBtn.innerHTML = "0";
+    $total.innerHTML = "0";
   }
-};
+}
 
-subtotalCount();
+document.querySelectorAll(".my_row").forEach((el) => {
+  el.addEventListener("change", (ev) => {
+    updateValues();
+  });
+})
+
+$deselectAll.addEventListener("click", (ev) =>{
+  ev.preventDefault();
+  deSelectAll();
+  updateValues();
+});
+
+$selectAll.addEventListener("click", (ev) =>{
+  ev.preventDefault();
+  selectAll();
+  updateValues();
+});
+
+selectAll();
+updateValues();
